@@ -9,7 +9,10 @@ export default function Navbar({ token }) {
         </div>
         <Link to={"/"}>HOME</Link>
         <Link to={"/posts"}>POSTS</Link>
-        <Link to={"/profile"}>PROFILE</Link>
+        { token ?
+            <Link to={"/profile"}>PROFILE</Link> : null
+        }
+
         { token ?
           <Link to={"/account/logout"}>LOGOUT</Link> :
           <Link to={"/account/login"}>LOGIN</Link>
