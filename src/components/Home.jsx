@@ -11,8 +11,14 @@ export default function Home({ token }) {
     return (
     <div>
       <h1>Welcome to Stranger's Things</h1>
-      <h4>Logged in as {user.username}</h4>
-      <button onClick={() => navigate('/profile')}>VIEW PROFILE</button> 
+      { (token) ?
+        <h4>Logged in as {user.username}</h4>:
+        <p></p>
+      }
+      { (token) ?
+        <button onClick={() => navigate('/profile')}>VIEW PROFILE</button> :
+        <p></p>
+      }
     </div>
     )
   }
